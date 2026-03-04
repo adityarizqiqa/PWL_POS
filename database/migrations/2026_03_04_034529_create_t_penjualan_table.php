@@ -18,7 +18,7 @@ return new class extends Migration
         $table->integer('total_harga');
         $table->timestamps();
 
-        $table->foreign('user_id')->references('id')->on('users');
+        $table->foreign('user_id')->references('user_id')->on('m_user');
         });
     }
 
