@@ -12,22 +12,16 @@ class SupplierSeeder extends Seeder
      */
     public function run(): void
     {
-        $targetCount = 3;
-        $existingCount = DB::table('m_supplier')->count();
-
-        if ($existingCount >= $targetCount) {
-            return;
-        }
-
         $now = now();
-        $rowsToInsert = [];
-        for ($i = $existingCount; $i < $targetCount; $i++) {
-            $rowsToInsert[] = [
-                'created_at' => $now,
-                'updated_at' => $now,
-            ];
-        }
 
-        DB::table('m_supplier')->insert($rowsToInsert);
+        DB::table('m_supplier')->upsert(
+            [
+                ['supplier_id' => 1, 'supplier_nama' => 'Supplier A', 'created_at' => $now, 'updated_at' => $now],
+                ['supplier_id' => 2, 'supplier_nama' => 'Supplier B', 'created_at' => $now, 'updated_at' => $now],
+                ['supplier_id' => 3, 'supplier_nama' => 'Supplier C', 'created_at' => $now, 'updated_at' => $now],
+            ],
+            ['supplier_id'],
+            ['supplier_nama', 'updated_at']
+        );
     }
 }

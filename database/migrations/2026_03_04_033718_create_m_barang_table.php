@@ -21,8 +21,8 @@ return new class extends Migration
         $table->integer('harga_jual');
         $table->timestamps();
 
-        $table->foreign('kategori_id')->references('id')->on('m_kategori');
-        $table->foreign('supplier_id')->references('id')->on('m_supplier');
+        $table->foreign('kategori_id')->references('kategori_id')->on('m_kategori');
+        $table->foreign('supplier_id')->references('supplier_id')->on('m_supplier');
         });
     }
 

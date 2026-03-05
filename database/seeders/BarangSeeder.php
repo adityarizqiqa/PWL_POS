@@ -17,8 +17,8 @@ class BarangSeeder extends Seeder
             SupplierSeeder::class,
         ]);
 
-        $kategoriIds = DB::table('m_kategori')->orderBy('id')->pluck('id')->all();
-        $supplierIds = DB::table('m_supplier')->orderBy('id')->pluck('id')->all();
+        $kategoriIds = DB::table('m_kategori')->orderBy('kategori_id')->pluck('kategori_id')->all();
+        $supplierIds = DB::table('m_supplier')->orderBy('supplier_id')->pluck('supplier_id')->all();
 
         if (count($kategoriIds) < 1 || count($supplierIds) < 1) {
             return;
