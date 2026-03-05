@@ -18,6 +18,7 @@ class LevelSeeder extends Seeder
                 ['level_kode' => 'ADM', 'level_nama' => 'Administrator'],
                 ['level_kode' => 'KSR', 'level_nama' => 'Kasir'],
                 ['level_kode' => 'MNG', 'level_nama' => 'Manager'],
+                ['level_kode' => 'CUS', 'level_nama' => 'Pelanggan'],
             ],
             ['level_kode'],
             ['level_nama']
